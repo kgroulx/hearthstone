@@ -43,14 +43,10 @@ legal$release[legal$set == "KARA"] <- as.Date("2016-08-11")
 df <- data.frame(costs)
 # decimate set due to repeating nature
 dust <- df[df$action == "CRAFTING_NORMAL",]
-dust$rarity <- 'common'
-dust$rarity[dust$cost == 100] <- 'rare'
-dust$rarity[dust$cost == 400] <- 'epic'
-dust$rarity[dust$cost == 1600] <- 'legendary'
 
 # get combined list, 675 obs
 total <- merge(legal,dust,by="card_id")
-cross <- table(total$rarity.x,total$set)
+cross <- table(total$rarity,total$set)
 # clean up
 tmpRow <- cross[4,]
 cross[4,] <- cross[3,]
@@ -70,7 +66,7 @@ barplot(cross,main="Craftable cards by expansion",xlab="Expansion",ylab="# of ca
 cross[4,] / colSums(cross)
 
 # how about by player class?
-cross2 <- table(total$rarity.x,total$playerClass)
+cross2 <- table(total$rarity,total$playerClass)
 tmpRow <- cross2[4,]
 cross2[4,] <- cross2[3,]
 cross2[3,] <- cross2[2,]

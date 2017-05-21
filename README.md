@@ -5,7 +5,7 @@ October 25, 2016
 
 
 # Introduction
-Recently, a dataset was published on Kaggle (<https://www.kaggle.com/jeradrose/hearthstone-cards>) which contained a fairly well documented ordering of data on the corpus of available Hearthstone cards as of October 2016.  This dataset, while containing a lot of information about the cards themselves, regrettably did not contain any real world statistical data.  Searching around led to a few different ad hoc API implementations, but nothing official from Blizzard themselves.  Regardless, a look at this data may give some insights as to design principles that Blizzard is following to keep Hearthstone a relatively balanced and accessible game.
+Recently, a dataset was published on Kaggle (<https://www.kaggle.com/jeradrose/hearthstone-cards>) which contained a well documented ordering of data on the corpus of available Hearthstone cards as of October 2016.  This dataset contained a lot of information about the Hearthstone cards themselves.  However, an emergent feature of Hearthstone (and any TCG in general) is the meta-analysis of the game, or seeing which cards are in high demand or are being used efficiently due to their relative power to other cards in the game.  Due to lack of a game database API, we are unable to see usage numbers or win percentages for each card; regardless, a look at this extracted card data may give some insights as to design principles that Blizzard is following to keep Hearthstone a relatively balanced and accessible game.
 
 To start with, let's load in the data and relevant packages.
 
@@ -104,7 +104,7 @@ cross[,3] <- tmpRow
 row.names(cross) <- c("COMMON","RARE","EPIC","LEGENDARY")
 colnames(cross) <- c("Classic","GoblinsvGnomes","Grand Tourney","Old Gods")
 # plot craftable cards by expansion
-barplot(cross,main="Craftable cards by expansion",xlab="Expansion",ylab="# of cards",col=c("#4C6A92","#006E51","#D8AE47","#B93A32"),legend=rownames(cross),beside=T)
+barplot(cross,main="Craftable cards by expansion",xlab="Expansion",ylab="# of cards",col=c("#FFFFFF","#0070DD","#A335EE","#FF8000"),legend=rownames(cross),beside=T)
 ```
 
 ![](summary_files/figure-html/unnamed-chunk-4-1.png)<!-- -->

@@ -107,7 +107,7 @@ colnames(cross) <- c("Classic","GoblinsvGnomes","Grand Tourney","Old Gods")
 barplot(cross,main="Craftable cards by expansion",xlab="Expansion",ylab="# of cards",col=c("#FFFFFF","#0070DD","#A335EE","#FF8000"),legend=rownames(cross),beside=T)
 ```
 
-![](summary_files/figure-html/unnamed-chunk-4-1)<!-- -->
+![](summary_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 This graph starts to tell us a bit more about the data.  To no surprise, there were a larger amount of cards at launch to support the beginning of the game; however, it looks like the number of cards for each expansion has been roughly the same.  As the common Hearthstone player knows, common cards are easy enough to come by, but epic and legendary cards are where the difficulties of collecting dust and crafting come in.  Since this is such a time-consuming process and must be thought out efficiently, are there a higher proportion of rarer cards in any expansion?  Let's check the proportion of epics and legendaries within each set.
 
